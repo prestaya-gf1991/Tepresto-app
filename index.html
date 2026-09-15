@@ -1258,25 +1258,33 @@
       renderTabla();
       toast(`Deuda saldada: ${p.nombre} ${p.apellido} se eliminó del registro`);
     } else {
-      guardarPrestamos(prestamos);
-      renderTabla();
-      toast('Abono registrado');
-    }
+      función registrarAbono(identificación, montoAbonado){
+  const indice = prestamos.encontrarIndice(pag => pag.identificación === identificación);
+  if(indice < 0) return;
+  const pag = prestamos[indice];
+
+  // 1. Sumar al abonado
+  pag.abonado = (Number(pag.abonado) || 0) + montoAbonado;
+  
+  // 2. Restar al debe
+  pag.debe = calcularSaldo(pag) - montoAbonado;
+
+  // 3. Guardar fecha del ultimo abono - ESTO ES LO NUEVO
+  const ahora = new Date();
+  pag.fecha_ultimo_abono = ahora.toLocaleDateString('es-DO') + " " + ahora.toLocaleTimeString('es-DO', {hour: '2-digit', minute:'2-digit'});
+
+  // 4. Si ya pago todo, lo elimina
+  if(calcularSaldo(pag) <= 0.01){
+    prestamos.empalme(indice, 1);
+    tostada(`Deuda saldada: ${pag.nombre} ${pag.apellido} se eliminó del registro`);
+  } else {
+    tostada('Abono registrado');
   }
 
-  /* ---------------- Recibo / factura ---------------- */
-  const overlay = document.getElementById('overlay-recibo');
-  const reciboContenido = document.getElementById('recibo-contenido');
-  let prestamoActivo = null;
-  let textoImpresionActivo = null;
-
-  function textoRecibo(p){
-    const atraso = estaEnAtraso(p);
-    const abonado = Number(p.abonado) || 0;
-    const debe = calcularSaldo(p);
-    return {
-      html: `
-        <div class="title center">TE PRESTO</div>
+  // 5. Guardar y recargar
+  guardarPrestamos(prestamos);
+  renderTabla();
+}
         <div class="center">Comprobante de préstamo</div>
         <hr>
         <div class="line"><span>Fecha</span><span>${fmtFecha(p.fecha)}</span></div>
