@@ -1258,25 +1258,25 @@
       renderTabla();
       toast(`Deuda saldada: ${p.nombre} ${p.apellido} se eliminó del registro`);
     } else {
-      función registrarAbono(identificación, montoAbonado){
-  const indice = prestamos.encontrarIndice(pag => pag.identificación === identificación);
-  if(indice < 0) return;
-  const pag = prestamos[indice];
-
-  // 1. Sumar al abonado
-  pag.abonado = (Number(pag.abonado) || 0) + montoAbonado;
-  
-  // 2. Restar al debe
-  pag.debe = calcularSaldo(pag) - montoAbonado;
-
-  // 3. Guardar fecha del ultimo abono - ESTO ES LO NUEVO
-  const ahora = new Date();
-  pag.fecha_ultimo_abono = ahora.toLocaleDateString('es-DO') + " " + ahora.toLocaleTimeString('es-DO', {hour: '2-digit', minute:'2-digit'});
-
-  // 4. Si ya pago todo, lo elimina
-  if(calcularSaldo(pag) <= 0.01){
-    prestamos.empalme(indice, 1);
-    tostada(`Deuda saldada: ${pag.nombre} ${pag.apellido} se eliminó del registro`);
+    1261 función registrarAbono(identificación, montoAbonado){
+1262 constante Indice = prestamos.encontrarIndice(pag => pag.identificación === identificación);
+1263 si(indice < 0) devolver;
+1264 constante pag = prestamos[indice];
+1265 pag.abonado = (Numero(pag.abonado) || 0) + montoAbonado;
+1266 
+1267 si(calcularSaldo(pag) <= 0,01){
+1268 // Deuda saldada por completo: se elimina automáticamente del registro.
+1269 prestamos.empalme(indice, 1);
+1270 guardarPrestamos(prestamos);
+1271 renderTabla();
+1272 tostada(`Deuda saldada:${pag.nombre} ${pag.apellido}se eliminó del registro`);
+1273 }
+1274 demás{
+1275 guardarPrestamos(prestamos);
+1276 renderTabla();
+1277 tostada('Abono registrado');
+1278 }
+1279 }  
   } else {
     tostada('Abono registrado');
   }
