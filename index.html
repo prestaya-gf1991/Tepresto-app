@@ -1290,6 +1290,7 @@
         ${atraso ? `<div class="line" style="color:#A23B3B;"><span>Meses de atraso</span><span>${calcularMesesAtraso(p)}</span></div>` : ''}
         ${atraso ? `<div class="line" style="color:#A23B3B;"><span>Mora acumulada</span><span>${fmtMoneda(calcularMora(p))}</span></div>` : ''}
         ${atraso ? `<div class="line" style="font-weight:600;"><span>Total a pagar</span><span>${fmtMoneda(debe + calcularMora(p))}</span></div>` : ''}
+        <div class="line" style="font-weight:600;"><span>Firma:____________________</span></div>
         <hr>
         <div class="center">Gracias por su confianza</div>
       `,
