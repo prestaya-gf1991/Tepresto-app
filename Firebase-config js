@@ -1,1 +1,14 @@
 
+claude plugin marketplace add firebase/agent-skills
+claude plugin install firebase@firebase
+
+
+Always look for and use the appropriate **Firebase agent skills** to perform tasks related to Firebase.
+
+I want to use Firebase as my backend, using Firebase Authentication and Firestore database.
+
+Set up and use Email/password Authentication.
+
+Use my existing Firebase project: gmfc-29bb7
+
+Make sure to register a web app in that project and set up my app's codebase to use Firebase.
