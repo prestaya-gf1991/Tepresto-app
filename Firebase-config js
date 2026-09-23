@@ -1,14 +1,15 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDFlPFa6eJG69G24ZS4Iet73U3EBHiMVC4
-  authDomain:"gmfc-29bb7.firebaseapp.com",
-  projectId:"gmfc-29bb7",
-  storageBucket:"gmfc-29bb7.firebasestorage.app",
-  messagingSenderId: "G-JKE7Z0BL3S"
-  appId: "1:224077764534:web:9f7d2c327240459e4d5317",
+  apiKey: "AIzaSyDFlPFa6eJG69G24ZS4Iet73U3EBHiMVC4",
+  authDomain: "gmfc-29bb7.firebaseapp.com",
+  projectId: "gmfc-29bb7",
+  storageBucket: "gmfc-29bb7.firebasestorage.app",
+  messagingSenderId: "224077764534",
+  appId: "1:224077764534:web:9f7d2c327240459e4d5317"
 };
 
 const app = initializeApp(firebaseConfig);
