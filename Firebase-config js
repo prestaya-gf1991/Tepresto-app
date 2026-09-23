@@ -6,8 +6,8 @@ import { getAnalytics } from "firebase/analytics";
 // Tu configuración de Firebase (la que ya tienes)
 const firebaseConfig = {
   apiKey: "TU_API_KEY_AQUI",
-  authDomain: "TU_PROYECTO.firebaseapp.com",
-  projectId: "TU_PROJECT_ID",
+  authDomain: "Te-presto-barahona.firebaseapp.com",
+  projectId: "Te- presto-barahona",
   storageBucket: "TU_PROYECTO.appspot.com",
   messagingSenderId: "TU_ID",
   appId: "TU_APP_ID",
