@@ -1510,40 +1510,24 @@
   limpiarFormulario();
   renderTabla();
 
+})();
+</script>
 
-
-
-<script type="module">import { db, auth } from "./Firebase-config.js";
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
-  import { 
-    getFirestore, collection, addDoc, getDocs, 
-    updateDoc, deleteDoc, doc, onSnapshot 
+<!-- Conexión a Firebase (usa las credenciales de Firebase-config.js) -->
+<script type="module">
+  import { db, auth } from "./Firebase-config.js";
+  import {
+    collection, addDoc, getDocs, updateDoc, deleteDoc, doc, onSnapshot
   } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
-  import { 
-    getAuth, signInWithEmailAndPassword, 
-    createUserWithEmailAndPassword, onAuthStateChanged, signOut 
+  import {
+    signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut
   } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
-
-  const firebaseConfig = {
-    apiKey: "TU_API_KEY",
-    authDomain: "tepresto-app.firebaseapp.com",
-    projectId: "tepresto-app",
-    storageBucket: "tepresto-app.appspot.com",
-    messagingSenderId: "...",
-    appId: "..."
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-  const auth = getAuth(app);
 
   window.db = db;
   window.auth = auth;
   window.firestoreFns = { collection, addDoc, getDocs, updateDoc, deleteDoc, doc, onSnapshot };
   window.authFns = { signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut };
 </script>
-  
-})();
-</script>
+
 </body>
 </html>
