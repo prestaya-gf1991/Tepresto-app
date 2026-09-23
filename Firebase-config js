@@ -1,22 +1,19 @@
-// firebase.js - PARA TU APP TE PRESTO - YA CON FIRESTORE
+// firebase.js - GMFC - Te presto APP - LISTO
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAnalytics } from "firebase/analytics";
 
-// Tu configuración de Firebase (la que ya tienes)
 const firebaseConfig = {
-  apiKey: "TU_API_KEY_AQUI",
-  authDomain: "Te-presto-barahona.firebaseapp.com",
-  projectId: "Te- presto-barahona",
-  storageBucket: "TU_PROYECTO.appspot.com",
-  messagingSenderId: "TU_ID",
-  appId: "TU_APP_ID",
-  measurementId: "TU_MEASUREMENT_ID" // si lo tienes
+  apiKey: "AIzaSyDfIPFa6J69G24ZS4Iet73U3EBHiMVC4",
+  authDomain: "gmfc-29bb7.firebaseapp.com",
+  projectId: "gmfc-29bb7",
+  storageBucket: "gmfc-29bb7.firebasestorage.app",
+  messagingSenderId: "224077764534",
+  appId: "1:224077764534:web:9f7d2c327240459e4d5317",
+  measurementId: "G-JK728BL35S"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-
-// ESTA ES LA LÍNEA QUE TE FALTABA PARA CONECTAR LA BASE DE DATOS
 export const db = getFirestore(app);
