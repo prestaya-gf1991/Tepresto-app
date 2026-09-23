@@ -7,7 +7,7 @@ const firebaseConfig = {
   authDomain:"gmfc-29bb7.firebaseapp.com",
   projectId:"gmfc-29bb7",
   storageBucket:"gmfc-29bb7.firebasestorage.app",
-  messagingSenderId:"224077764534",
+  messagingSenderId: "G-JKE7Z0BL3S"
   appId: "1:224077764534:web:9f7d2c327240459e4d5317",
 };
 
