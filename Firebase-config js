@@ -1,19 +1,16 @@
-// firebase.js - GMFC - Te presto APP - LISTO
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { getAnalytics } from "firebase/analytics";
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDfIPFa6J69G24ZS4Iet73U3EBHiMVC4",
+  apiKey: "AQUI VA TU apiKey REAL",
   authDomain: "gmfc-29bb7.firebaseapp.com",
   projectId: "gmfc-29bb7",
   storageBucket: "gmfc-29bb7.firebasestorage.app",
-  messagingSenderId: "224077764534",
-  appId: "1:224077764534:web:9f7d2c327240459e4d5317",
-  measurementId: "G-JK728BL35S"
+  messagingSenderId: "AQUI VA TU messagingSenderId REAL",
+  appId: "24071991"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 export const db = getFirestore(app);
+export const auth = getAuth(app);
