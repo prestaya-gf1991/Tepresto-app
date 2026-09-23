@@ -1,14 +1,19 @@
+// firebase.js - CONEXIÓN LISTA PARA TE PRESTO
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
-claude plugin marketplace add firebase/agent-skills
-claude plugin install firebase@firebase
+// ⬇️ AQUÍ ES DONDE TIENES QUE PEGAR TUS 6 CLAVES DE FIREBASE
+const firebaseConfig = {
+  apiKey: "PEGA_AQUI_TU_API_KEY",
+  authDomain: "PEGA_AQUI_TU_AUTH_DOMAIN",
+  projectId: "PEGA_AQUI_TU_PROJECT_ID",
+  storageBucket: "PEGA_AQUI_TU_STORAGE_BUCKET",
+  messagingSenderId: "PEGA_AQUI_TU_SENDER_ID",
+  appId: "PEGA_AQUI_TU_APP_ID"
+};
 
-
-Always look for and use the appropriate **Firebase agent skills** to perform tasks related to Firebase.
-
-I want to use Firebase as my backend, using Firebase Authentication and Firestore database.
-
-Set up and use Email/password Authentication.
-
-Use my existing Firebase project: gmfc-29bb7
-
-Make sure to register a web app in that project and set up my app's codebase to use Firebase.
+// Esto no lo toques
+const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
+export const auth = getAuth(app);
